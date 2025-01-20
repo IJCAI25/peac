@@ -2,6 +2,8 @@
 layout: default
 ---
 
+# Perception Emulated Actor Critic in Crowd Scenario Navigation
+
 # Background
 
 ## Interpretable Navigation
