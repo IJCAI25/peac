@@ -2,6 +2,8 @@
 layout: default
 ---
 
+# Perception Emulated Actor Critic in Crowd Scenario Navigation
+
 # Background
 
 ## Interpretable Navigation
@@ -90,7 +92,7 @@ However, in this approach, the motion planning unit and the LLM are serial, mean
     <td>AIRL</td>
     <td>Okal et al.</td>
     <td>0.43</td>
-    <td><b>65.29</b></td>
+    <td><b>69.29</b></td>
     <td>121.99</td>
     <td>0.35</td>
     <td>89.14</td>
@@ -206,7 +208,7 @@ However, in this approach, the motion planning unit and the LLM are serial, mean
   </tr>
   <tr>
     <td>DQN</td>
-    <td>Escobar et al.</td>
+    <td>Escobar-Naranjo et al.</td>
     <td>0.65</td>
     <td>87.40</td>
     <td>36.25</td>
@@ -273,7 +275,7 @@ However, in this approach, the motion planning unit and the LLM are serial, mean
     <td colspan="2"><b>PEAC</b></td>
     <td>Ours</td>
     <td><b>0.70</b></td>
-    <td>82.04</td>
+    <td>72.04</td>
     <td><b>26.17</b></td>
     <td><b>0.66</b></td>
     <td><b>70.35</b></td>
@@ -283,6 +285,284 @@ However, in this approach, the motion planning unit and the LLM are serial, mean
     <td><b>43.95</b></td>
   </tr>
 </table>
+
+*Table: Experimental results of different decision makers, with an average ρ = 2.*
+
+<table>
+  <tr>
+    <th rowspan="2">Methods</th>
+    <th colspan="3">ρ = 0.5</th>
+    <th colspan="3">ρ = 1.0</th>
+    <th colspan="3">ρ = 1.5</th>
+  </tr>
+  <tr>
+    <th>SR↑</th>
+    <th>SD↓</th>
+    <th>AT↓</th>
+    <th>SR↑</th>
+    <th>SD↓</th>
+    <th>AT↓</th>
+    <th>SR↑</th>
+    <th>SD↓</th>
+    <th>AT↓</th>
+  </tr>
+  <tr>
+    <td>MAXQ</td>
+    <td>0.85</td>
+    <td>77.21</td>
+    <td>35.06</td>
+    <td>0.61</td>
+    <td>77.85</td>
+    <td>47.59</td>
+    <td>0.36</td>
+    <td>68.51</td>
+    <td>75.46</td>
+  </tr>
+  <tr>
+    <td>MGSMC</td>
+    <td>0.82</td>
+    <td>77.13</td>
+    <td>35.16</td>
+    <td>0.55</td>
+    <td>79.60</td>
+    <td>48.65</td>
+    <td>0.34</td>
+    <td>67.86</td>
+    <td>87.00</td>
+  </tr>
+  <tr>
+    <td>A3C</td>
+    <td>0.80</td>
+    <td>79.57</td>
+    <td>36.94</td>
+    <td>0.50</td>
+    <td>72.056</td>
+    <td>70.83</td>
+    <td>0.29</td>
+    <td>72.04</td>
+    <td>69.15</td>
+  </tr>
+  <tr>
+    <td>PG</td>
+    <td>0.83</td>
+    <td>77.29</td>
+    <td>33.53</td>
+    <td>0.59</td>
+    <td>79.92</td>
+    <td>46.44</td>
+    <td>0.34</td>
+    <td>79.77</td>
+    <td>61.07</td>
+  </tr>
+  <tr>
+    <td>TRPO</td>
+    <td>0.81</td>
+    <td>76.35</td>
+    <td>34.43</td>
+    <td>0.62</td>
+    <td>85.05</td>
+    <td>43.11</td>
+    <td>0.38</td>
+    <td>61.65</td>
+    <td>106.26</td>
+  </tr>
+  <tr>
+    <td>DDPG</td>
+    <td>0.79</td>
+    <td>77.22</td>
+    <td>32.36</td>
+    <td>0.53</td>
+    <td>79.20</td>
+    <td>57.42</td>
+    <td>0.39</td>
+    <td>70.26</td>
+    <td>66.34</td>
+  </tr>
+  <tr>
+    <td>DQN</td>
+    <td>0.88</td>
+    <td>76.07</td>
+    <td>38.70</td>
+    <td>0.71</td>
+    <td>77.62</td>
+    <td>44.08</td>
+    <td>0.46</td>
+    <td>86.06</td>
+    <td>48.13</td>
+  </tr>
+  <tr>
+    <td>D3QN</td>
+    <td>0.84</td>
+    <td>74.62</td>
+    <td>32.55</td>
+    <td>0.51</td>
+    <td>72.06</td>
+    <td>66.19</td>
+    <td>0.30</td>
+    <td>75.47</td>
+    <td>73.10</td>
+  </tr>
+  <tr>
+    <td>TD3</td>
+    <td>0.75</td>
+    <td>76.89</td>
+    <td>33.44</td>
+    <td>0.52</td>
+    <td>77.97</td>
+    <td>49.07</td>
+    <td>0.31</td>
+    <td>79.27</td>
+    <td>58.63</td>
+  </tr>
+  <tr>
+    <td>PPO</td>
+    <td>0.78</td>
+    <td>79.08</td>
+    <td>40.35</td>
+    <td>0.52</td>
+    <td>80.22</td>
+    <td>48.34</td>
+    <td>0.35</td>
+    <td>56.22</td>
+    <td>117.46</td>
+  </tr>
+  <tr>
+    <td>SAC</td>
+    <td><b>0.90</b></td>
+    <td>72.69</td>
+    <td>35.89</td>
+    <td>0.70</td>
+    <td>81.55</td>
+    <td>42.10</td>
+    <td>0.55</td>
+    <td>82.28</td>
+    <td>64.53</td>
+  </tr>
+  <tr>
+    <td>PEAC</td>
+    <td>0.87</td>
+    <td><b>72.01</b></td>
+    <td><b>32.48</b></td>
+    <td><b>0.78</b></td>
+    <td><b>73.49</b></td>
+    <td><b>39.35</b></td>
+    <td><b>0.56</b></td>
+    <td><b>70.96</b></td>
+    <td><b>45.39</b></td>
+  </tr>
+</table>
+
+*Table: Comparison of different RL methods under different ρ.*
+
+<table>
+  <tr>
+    <th colspan="3">Training Stage</th>
+    <th colspan="3">Decision-making</th>
+    <th colspan="2">State Observation</th>
+    <th colspan="2">Action Output</th>
+    <th>Language Ability</th>
+  </tr>
+  <tr>
+    <th>1</th>
+    <th>2</th>
+    <th>3</th>
+    <th>SR↑</th>
+    <th>SD↓</th>
+    <th>AT↓</th>
+    <th>E<sub>ped</sub>↓</th>
+    <th>D<sub>obs</sub>↓</th>
+    <th>E<sub>x</sub><sup>a</sup>↓</th>
+    <th>E<sub>y</sub><sup>a</sup>↓</th>
+    <th>L<sub>Token</sub>↓</th>
+  </tr>
+  <tr>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✗</td>
+    <td>0.41</td>
+    <td>84.47</td>
+    <td>59.77</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+  </tr>
+  <tr>
+    <td>✓</td>
+    <td>✗</td>
+    <td>✗</td>
+    <td>0.03</td>
+    <td>109.54</td>
+    <td>68.55</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+  </tr>
+  <tr>
+    <td>✗</td>
+    <td>✓</td>
+    <td>✗</td>
+    <td>0.43</td>
+    <td>82.29</td>
+    <td>58.96</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+    <td>/</td>
+  </tr>
+  <tr>
+    <td>✓</td>
+    <td>✗</td>
+    <td>✓</td>
+    <td>0.04</td>
+    <td>100.32</td>
+    <td>76.95</td>
+    <td>0.4612</td>
+    <td>0.003</td>
+    <td>0.1776</td>
+    <td>0.4239</td>
+    <td>0.117</td>
+  </tr>
+  <tr>
+    <td>✗</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td>0.44</td>
+    <td>79.31</td>
+    <td>56.65</td>
+    <td>0.5437</td>
+    <td>0.095</td>
+    <td>0.1072</td>
+    <td>0.1811</td>
+    <td>0.106</td>
+  </tr>
+  <tr>
+    <td>✓</td>
+    <td>✓</td>
+    <td>✓</td>
+    <td><b>0.46</b></td>
+    <td><b>53.60</b></td>
+    <td><b>43.95</b></td>
+    <td><b>0.46115</b></td>
+    <td><b>0.094</b></td>
+    <td><b>0.1066</b></td>
+    <td><b>0.1799</b></td>
+    <td><b>0.099</b></td>
+  </tr>
+</table>
+
+*Table: Ablation Study of the Three-Stage Training in PEAC.*
+
+| Interpreter | LLM Score (GPT-4) | LLM Score (LLaVA) | LLM Score (Gemini) | Human Score |
+|:------------|:------------------|:------------------|:-------------------|:------------|
+| ADAPT | 3.95 | 3.5 | 4 | 3.375 |
+| PEAC | **4.65** | **4.25** | **4.375** | **4.05** |
+
+*Table: Experimental Results of the Interpreter's Performance.*
 
 ### Qualitative Results
 
@@ -345,6 +625,13 @@ However, in this approach, the motion planning unit and the LLM are serial, mean
 ## Real-world
 
 ### Quantitative Results
+
+| Methods | SR↑ | NE↓ | SPL↑ | nDTW↑ | CLS↑ |
+|:--------|:----|:----|:-----|:------|:------|
+| SAC | 0.20 | 2.80 | 45.0 | 55.0 | 50.0 |
+| PEAC | **0.40** | **1.50** | **65.0** | **75.0** | **70.0** |
+
+*Table: Quantitative Results of Real-World Experiments.*
 
 ### Qualitative Results
 
