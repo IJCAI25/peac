@@ -15,7 +15,7 @@ The emergence of LLMs offers a potential direction for interpretability. Some st
 ## Sophistry Phenomenon
 
 <div style="text-align: center;">
-  <img src="./figure/sophistry.png" width="70%">
+  <img src="./figure/sophistry.png" width="80%">
 </div>
 
 The use of LLMs in navigation can be categorized into two approaches. The first approach treats the LLM as a decision-maker. However, in the field of robotic navigation, agents need to perform real-time motion planning, but the response time of LLMs is insufficient for planning tasks. 
@@ -35,14 +35,16 @@ However, in this approach, the motion planning unit and the LLM are serial, mean
 
 <div style="display: flex; justify-content: space-between;">
   <div style="width: 48%; text-align: center;">
-    <img src="./figure/world-1.png" width="100%">
+    <img src="./figure/world-2.png" width="100%">
     <p>Traditional Actor-Critic Method</p>
   </div>
   <div style="width: 48%; text-align: center;">
-    <img src="./figure/world-2.png" width="100%">
+    <img src="./figure/world-1.png" width="100%">
     <p>Our PEAC: Perception-Emulating Actor-Critic Method</p>
   </div>
 </div>
+
+Recent research on spatial intelligence has proposed embodied agent architectures based on large models, where the ``brain" of the agent is a paradigm containing components such as Actor, Critic, Perception, Memory, and World Model.
 
 ## Framework
 
