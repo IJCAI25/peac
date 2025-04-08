@@ -6,6 +6,14 @@ layout: default
 
 Our code is available [here](https://github.com/IJCAI25/peac_code)
 
+# Training Environment
+
+<div style="text-align: center;">
+  <img src="./figure/env.png" width="80%">
+</div>
+
+Above is the navigation environment. Our environment setup comply with the NHTSA typology’s scenario specifications, the paths in the environment incorporate classic road structures, including SI (Signalized Intersection), USI (Unsignalized Intersection), RAB (Roundabouts), LANE, and EOA (Emergency Obstacle Avoidance).
+
 # Training Details
 
 At each step, given state $$s \in S$$ and action $$a \in A$$, $$T(s' \mid s,a)$$ computes the transition probability to $$s'$$. The agent's state, hidden in POMDPs, is estimated via $$O(o \mid s',a)$$ with $$o \in \Omega$$. The agent, based on observations, takes actions to earn immediate rewards $$r = R(s,a)$$, aiming to optimize policy $$\Pi(a \mid s)$$ for maximum cumulative rewards, guiding it towards the goal in uncertain environments.
