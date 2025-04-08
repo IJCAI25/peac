@@ -48,27 +48,38 @@ For each object, I am aware of their distance and angle from us. We adopt the sa
 
 An example of the output is as follows:
 
-```
-Semantic Encoder(Observation):
+***Semantic Encoder(Observation):***
 
-"State: 
-A pedestrian; Angle: -0.65; Distance: 2.23m; 
-A pedestrian; Angle: 1.06; Distance: 2.58m; 
-... 
-A pedestrian; Angle: -31.50; Distance: 10.47m; 
-My current speed is 0.21 m/s.
+***"State:***
 
-Actions: 
-Velocity: [$v_x$: 0.11, $v_y$: 0.18, $v_z$:0.00] 
-Angular Velocity: [$w_x$: -1.02, $w_y$: 0.00, $w_z$:0.00] 
-Rotation: [$\theta_x$: -0.28, $\theta_y$: -0.56, $\theta_z$:0.78]
+*A pedestrian; Angle: -0.65; Distance: 2.23m;*
 
-Reason:
-[Question:What should you do? Answer: I should slow down.]
-[Question:Why do you take this action? Answer: Because there are 6 pedestrians in front of me.]
-...
-[Question: What is your future plan? Answer: I should move as quickly as possible.]"
-```
+*A pedestrian; Angle: 1.06; Distance: 2.58m;* 
+
+*...* 
+
+*A pedestrian; Angle: -31.50; Distance: 10.47m;* 
+
+*My current speed is 0.21 m/s.*
+
+***Actions:*** 
+
+*Velocity: ($v_x$: 0.11, $v_y$: 0.18, $v_z$:0.00)*
+
+*Angular Velocity: ($w_x$: -1.02, $w_y$: 0.00, $w_z$:0.00)*
+
+*Rotation: ($\theta_x$: -0.28, $\theta_y$: -0.56, $\theta_z$:0.78)*
+
+***Reason:***
+
+*(Question:What should you do? Answer: I should slow down.)*
+
+*(Question:Why do you take this action? Answer: Because there are 6 pedestrians in front of me.)*
+
+*...*
+
+*(Question: What is your future plan? Answer: I should move as quickly as possible.)"*
+
 
 # Transformer Network
 
