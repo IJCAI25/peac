@@ -64,19 +64,21 @@ Our Transformer network, built on components akin to Transformers, maps inputs i
 
 # Training Results
 
-<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
-  <img src="./figure/sophistry.png" alt="Image 1" width="100">
-  <img src="./figure/sophistry.png" alt="Image 2" width="100">
-  <img src="./figure/sophistry.png" alt="Image 3" width="100">
-  <img src="./figure/sophistry.png" alt="Image 4" width="100">
-  <img src="./figure/sophistry.png" alt="Image 5" width="100">
-  <img src="./figure/sophistry.png" alt="Image 6" width="100">
-  <img src="./figure/sophistry.png" alt="Image 7" width="100">
-  <img src="./figure/sophistry.png" alt="Image 8" width="100">
-  <img src="./figure/sophistry.png" alt="Image 9" width="100">
-  <img src="./figure/sophistry.png" alt="Image 10" width="100">
-  <img src="./figure/sophistry.png" alt="Image 11" width="100">
-  <img src="./figure/sophistry.png" alt="Image 12" width="100">
+<div style="display: flex; justify-content: center;">
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
+    <img src="./figure/sophistry.png" alt="Image 1" width="100">
+    <img src="./figure/sophistry.png" alt="Image 2" width="100">
+    <img src="./figure/sophistry.png" alt="Image 3" width="100">
+    <img src="./figure/sophistry.png" alt="Image 4" width="100">
+    <img src="./figure/sophistry.png" alt="Image 5" width="100">
+    <img src="./figure/sophistry.png" alt="Image 6" width="100">
+    <img src="./figure/sophistry.png" alt="Image 7" width="100">
+    <img src="./figure/sophistry.png" alt="Image 8" width="100">
+    <img src="./figure/sophistry.png" alt="Image 9" width="100">
+    <img src="./figure/sophistry.png" alt="Image 10" width="100">
+    <img src="./figure/sophistry.png" alt="Image 11" width="100">
+    <img src="./figure/sophistry.png" alt="Image 12" width="100">
+  </div>
 </div>
 
 # Background
