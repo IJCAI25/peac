@@ -87,7 +87,7 @@ Our Transformer network, built on components akin to Transformers, maps inputs i
 # Training Results
 
 <div style="display: flex; justify-content: center;">
-  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%">
+  <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; width: 100%">
     <img src="./figure/llm-1.png" alt="Image 1" style="width: 100%;">
     <img src="./figure/llm-2.png" alt="Image 2" style="width: 100%;">
     <img src="./figure/llm-3.png" alt="Image 3" style="width: 100%;">
