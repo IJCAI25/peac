@@ -8,17 +8,17 @@ Our code is available at [here](https://github.com/IJCAI25/peac_code)
 
 # Training Details
 
-At each step, given state $$s \in S$$ and action $a \in A$, $T(s'|s,a)$ computes the transition probability to $s'$. The agent's state, hidden in POMDPs, is estimated via $O(o|s',a)$ with $o \in \Omega$. The agent, based on observations, takes actions to earn immediate rewards $r = R(s,a)$, aiming to optimize policy $\Pi(a|s)$ for maximum cumulative rewards, guiding it towards the goal in uncertain environments.
+At each step, given state $$s \in S$$ and action $$a \in A$$, $$T(s'|s,a)$$ computes the transition probability to $$s'$$. The agent's state, hidden in POMDPs, is estimated via $$O(o|s',a)$$ with $$o \in \Omega$$. The agent, based on observations, takes actions to earn immediate rewards $$r = R(s,a)$$, aiming to optimize policy $$\Pi(a|s)$$ for maximum cumulative rewards, guiding it towards the goal in uncertain environments.
 
-The training strategies are divided into discrete and continuous. In the discrete case, we uniformly sample $n_v$, $n_w$, and $n_\theta$ times in the $v$, $w$, and $\theta$ spaces respectively, with the total number of actions being $n_a = n_v n_w n_\theta$. Each displacement element $ds_j$ has a one-to-one mapping to an action tuple ($v_j$, $w_j$, $\theta_j$). In the continuous case, actions can take any value within the space between the maximum and minimum values.
+The training strategies are divided into discrete and continuous. In the discrete case, we uniformly sample $$n_v$$, $$n_w$$, and $$n_\theta$$ times in the $$v$$, $$w$$, and $$\theta$$ spaces respectively, with the total number of actions being $$n_a = n_v n_w n_\theta$$. Each displacement element $$ds_j$$ has a one-to-one mapping to an action tuple ($$v_j$$, $$w_j$$, $$\theta_j$$). In the continuous case, actions can take any value within the space between the maximum and minimum values.
 
-In the state space of discrete strategies, we set the values of $n_v$, $n_w$, and $n_\theta$ to be 10, that is, $n_a = 10^3$. The upper bound of the agent's speed is 3.0 m/s. In the processing of the state space, we use a pre-trained VAE encoder to extract $F_v$, and the dimensionality reduction results in $N_v = 516$. We stipulate $\tau_{\text{target}} = 2$ m, $n_{\text{max}} = 1000$, $\mu_{\text{success}} = 5000$, $\mu_{\text{fail}} = 200$, and $\mu_{\text{step}} = -0.1$.
+In the state space of discrete strategies, we set the values of $$n_v$$, $$n_w$$, and $$n_\theta$$ to be 10, that is, $$n_a = 10^3$$. The upper bound of the agent's speed is 3.0 m/s. In the processing of the state space, we use a pre-trained VAE encoder to extract $$F_v$$, and the dimensionality reduction results in $$N_v = 516$$. We stipulate $$\tau_{\text{target}} = 2$$ m, $$n_{\text{max}} = 1000$$, $$\mu_{\text{success}} = 5000$$, $$\mu_{\text{fail}} = 200$$, and $$\mu_{\text{step}} = -0.1$$.
 
-It should be noted that since our collision detection is based on the physical world of the Unreal Engine, the physical size and angle of the agent and obstacles will affect the collision detection; therefore, $\tau_{\text{fail}}$ is not a manually set fixed value.
+It should be noted that since our collision detection is based on the physical world of the Unreal Engine, the physical size and angle of the agent and obstacles will affect the collision detection; therefore, $$\tau_{\text{fail}}$$ is not a manually set fixed value.
 
-We set $n_{\text{env}} = 10^3$, $n_{\text{crowd}} = 10^4$, and $\alpha = 3 \times 10^{-4}$.
+We set $$n_{\text{env}} = 10^3$$, $$n_{\text{crowd}} = 10^4$$, and $$\alpha = 3 \times 10^{-4}$$.
 
-We select features of obstacles, pedestrians, and roads as the observation objects for the Semantic Feature, that is, $N_s = N_{\text{agent}} + N_{\text{route}} + N_{\text{pedestrian}} + N_{\text{obstacle}}$, where the value of each component changes with the surrounding environment, because each bit of the $F_s$ vector contains a value corresponding to semantic information.
+We select features of obstacles, pedestrians, and roads as the observation objects for the Semantic Feature, that is, $$N_s = N_{\text{agent}} + N_{\text{route}} + N_{\text{pedestrian}} + N_{\text{obstacle}}$$, where the value of each component changes with the surrounding environment, because each bit of the $$F_s$$ vector contains a value corresponding to semantic information.
 
 We mentioned the references for the selected evaluation metrics in our paper, and our evaluation methods follow the frameworks used in these papers. Here, we provide a definition:
 
