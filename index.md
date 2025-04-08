@@ -8,7 +8,7 @@ Our code is available at [here](https://github.com/IJCAI25/peac_code)
 
 # Training Details
 
-At each step, given state $$s \in S$$ and action $$a \in A$$, $$T(s'|s,a)$$ computes the transition probability to $$s'$$. The agent's state, hidden in POMDPs, is estimated via $$O(o|s',a)$$ with $$o \in \Omega$$. The agent, based on observations, takes actions to earn immediate rewards $$r = R(s,a)$$, aiming to optimize policy $$\Pi(a|s)$$ for maximum cumulative rewards, guiding it towards the goal in uncertain environments.
+At each step, given state $$s \in S$$ and action $$a \in A$$, $$T(s' \mid s,a)$$ computes the transition probability to $$s'$$. The agent's state, hidden in POMDPs, is estimated via $$O(o \mid s',a)$$ with $$o \in \Omega$$. The agent, based on observations, takes actions to earn immediate rewards $$r = R(s,a)$$, aiming to optimize policy $$\Pi(a \mid s)$$ for maximum cumulative rewards, guiding it towards the goal in uncertain environments.
 
 The training strategies are divided into discrete and continuous. In the discrete case, we uniformly sample $$n_v$$, $$n_w$$, and $$n_\theta$$ times in the $$v$$, $$w$$, and $$\theta$$ spaces respectively, with the total number of actions being $$n_a = n_v n_w n_\theta$$. Each displacement element $$ds_j$$ has a one-to-one mapping to an action tuple ($$v_j$$, $$w_j$$, $$\theta_j$$). In the continuous case, actions can take any value within the space between the maximum and minimum values.
 
