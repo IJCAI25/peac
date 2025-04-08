@@ -3,6 +3,3 @@ description: Perception Emulated Actor Critic in Crowd Scenario Navigation
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-cayman
-markdown: kramdown
-kramdown:
-  math_engine: mathjax
