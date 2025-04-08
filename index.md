@@ -8,6 +8,33 @@ Our code is available at [here](https://github.com/IJCAI25/peac_code)
 
 # Training Details
 
+At each step, given state $s \in S$ and action $a \in A$, $T(s'|s,a)$ computes the transition probability to $s'$. The agent's state, hidden in POMDPs, is estimated via $O(o|s',a)$ with $o \in \Omega$. The agent, based on observations, takes actions to earn immediate rewards $r = R(s,a)$, aiming to optimize policy $\Pi(a|s)$ for maximum cumulative rewards, guiding it towards the goal in uncertain environments.
+
+The training strategies are divided into discrete and continuous. In the discrete case, we uniformly sample $n_v$, $n_w$, and $n_\theta$ times in the $v$, $w$, and $\theta$ spaces respectively, with the total number of actions being $n_a = n_v n_w n_\theta$. Each displacement element $ds_j$ has a one-to-one mapping to an action tuple ($v_j$, $w_j$, $\theta_j$). In the continuous case, actions can take any value within the space between the maximum and minimum values.
+
+In the state space of discrete strategies, we set the values of $n_v$, $n_w$, and $n_\theta$ to be 10, that is, $n_a = 10^3$. The upper bound of the agent's speed is 3.0 m/s. In the processing of the state space, we use a pre-trained VAE encoder to extract $F_v$, and the dimensionality reduction results in $N_v = 516$. We stipulate $\tau_{\text{target}} = 2$ m, $n_{\text{max}} = 1000$, $\mu_{\text{success}} = 5000$, $\mu_{\text{fail}} = 200$, and $\mu_{\text{step}} = -0.1$.
+
+It should be noted that since our collision detection is based on the physical world of the Unreal Engine, the physical size and angle of the agent and obstacles will affect the collision detection; therefore, $\tau_{\text{fail}}$ is not a manually set fixed value.
+
+We set $n_{\text{env}} = 10^3$, $n_{\text{crowd}} = 10^4$, and $\alpha = 3 \times 10^{-4}$.
+
+We select features of obstacles, pedestrians, and roads as the observation objects for the Semantic Feature, that is, $N_s = N_{\text{agent}} + N_{\text{route}} + N_{\text{pedestrian}} + N_{\text{obstacle}}$, where the value of each component changes with the surrounding environment, because each bit of the $F_s$ vector contains a value corresponding to semantic information. The corresponding network structure is below：
+
+<div style="text-align: center;">
+  <img src="./figure/sophistry.png" width="80%">
+</div>
+
+We mentioned the references for the selected evaluation metrics in our paper, and our evaluation methods follow the frameworks used in these papers. Here, we provide a definition:
+
+$$
+SR = \frac{n_{\text{success}}}{N}, \quad SD = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (J_i - \overline{J})^2}, \quad AT = \frac{\sum t_{\text{success}}}{n_{\text{success}}}
+$$
+
+where:
+- $n_{\text{success}}$: Number of successful arrivals at the destination.
+- $N$: Total number of attempts.
+- $t_{\text{success}}$: Completion time of a successful task.
+
 # LLM Prompt
 
 Here is an example of the describing prompt:
@@ -21,37 +48,25 @@ For each object, I am aware of their distance and angle from us. We adopt the sa
 
 An example of the output is as follows:
 
-```html
-<b>Semantic Encoder(Observation)</b>:
+```
+Semantic Encoder(Observation):
 
-"<b>State</b>: 
-
+"State: 
 A pedestrian; Angle: -0.65; Distance: 2.23m; 
-
 A pedestrian; Angle: 1.06; Distance: 2.58m; 
-
 ... 
-
 A pedestrian; Angle: -31.50; Distance: 10.47m; 
-
 My current speed is 0.21 m/s.
 
-<b>Actions</b>: 
-
+Actions: 
 Velocity: [$v_x$: 0.11, $v_y$: 0.18, $v_z$:0.00] 
-
 Angular Velocity: [$w_x$: -1.02, $w_y$: 0.00, $w_z$:0.00] 
-
 Rotation: [$\theta_x$: -0.28, $\theta_y$: -0.56, $\theta_z$:0.78]
 
-<b>Reason</b>:
-
+Reason:
 [Question:What should you do? Answer: I should slow down.]
-
 [Question:Why do you take this action? Answer: Because there are 6 pedestrians in front of me.]
-
 ...
-
 [Question: What is your future plan? Answer: I should move as quickly as possible.]"
 ```
 
