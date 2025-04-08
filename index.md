@@ -87,19 +87,19 @@ Our Transformer network, built on components akin to Transformers, maps inputs i
 # Training Results
 
 <div style="display: flex; justify-content: center;">
-  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
-    <img src="./figure/llm-1.png" alt="Image 1" width="100">
-    <img src="./figure/llm-2.png" alt="Image 2" width="100">
-    <img src="./figure/llm-3.png" alt="Image 3" width="100">
-    <img src="./figure/llm-4.png" alt="Image 4" width="100">
-    <img src="./figure/llm-5.png" alt="Image 5" width="100">
-    <img src="./figure/llm-6.png" alt="Image 6" width="100">
-    <img src="./figure/llm-7.png" alt="Image 7" width="100">
-    <img src="./figure/llm-8.png" alt="Image 8" width="100">
-    <img src="./figure/llm-9.png" alt="Image 9" width="100">
-    <img src="./figure/llm-10.png" alt="Image 10" width="100">
-    <img src="./figure/llm-11.png" alt="Image 11" width="100">
-    <img src="./figure/llm-12.png" alt="Image 12" width="100">
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; width: 100%">
+    <img src="./figure/llm-1.png" alt="Image 1" style="width: 100%;">
+    <img src="./figure/llm-2.png" alt="Image 2" style="width: 100%;">
+    <img src="./figure/llm-3.png" alt="Image 3" style="width: 100%;">
+    <img src="./figure/llm-4.png" alt="Image 4" style="width: 100%;">
+    <img src="./figure/llm-5.png" alt="Image 5" style="width: 100%;">
+    <img src="./figure/llm-6.png" alt="Image 6" style="width: 100%;">
+    <img src="./figure/llm-7.png" alt="Image 7" style="width: 100%;">
+    <img src="./figure/llm-8.png" alt="Image 8" style="width: 100%;">
+    <img src="./figure/llm-9.png" alt="Image 9" style="width: 100%;">
+    <img src="./figure/llm-10.png" alt="Image 10" style="width: 100%;">
+    <img src="./figure/llm-11.png" alt="Image 11" style="width: 100%;">
+    <img src="./figure/llm-12.png" alt="Image 12" style="width: 100%;">
   </div>
 </div>
 
