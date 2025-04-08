@@ -27,9 +27,9 @@ SR = \frac{n_{\text{success}}}{N}, \quad SD = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (
 $$
 
 where:
-- $n_{\text{success}}$: Number of successful arrivals at the destination.
-- $N$: Total number of attempts.
-- $t_{\text{success}}$: Completion time of a successful task.
+- $$n_{\text{success}}$$: Number of successful arrivals at the destination.
+- $$N$$: Total number of attempts.
+- $$t_{\text{success}}$$: Completion time of a successful task.
 
 # LLM Prompt
 
