@@ -21,10 +21,10 @@ For each object, I am aware of their distance and angle from us. We adopt the sa
 
 An example of the output is as follows:
 
-```
-**Semantic Encoder(Observation)**:
+```html
+<b>Semantic Encoder(Observation)</b>:
 
-"**State**: 
+"<b>State</b>: 
 
 A pedestrian; Angle: -0.65; Distance: 2.23m; 
 
@@ -36,7 +36,7 @@ A pedestrian; Angle: -31.50; Distance: 10.47m;
 
 My current speed is 0.21 m/s.
 
-**Actions**: 
+<b>Actions</b>: 
 
 Velocity: [$v_x$: 0.11, $v_y$: 0.18, $v_z$:0.00] 
 
@@ -44,7 +44,7 @@ Angular Velocity: [$w_x$: -1.02, $w_y$: 0.00, $w_z$:0.00]
 
 Rotation: [$\theta_x$: -0.28, $\theta_y$: -0.56, $\theta_z$:0.78]
 
-**Reason**:
+<b>Reason</b>:
 
 [Question:What should you do? Answer: I should slow down.]
 
@@ -54,6 +54,13 @@ Rotation: [$\theta_x$: -0.28, $\theta_y$: -0.56, $\theta_z$:0.78]
 
 [Question: What is your future plan? Answer: I should move as quickly as possible.]"
 ```
+
+# Transformer Network
+
+<div style="text-align: center;">
+  <img src="./figure/sophistry.png" width="80%">
+</div>
+Our Transformer network, built on components akin to Transformers, maps inputs into a latent space for processing by using the attention mechanism in a non-uniform manner, and then decodes them back to the output space. This approach circumvents the quadratic dependency on the size of the inputs or outputs, enabling more efficient scaling to larger inputs and outputs.
 
 # Background
 
