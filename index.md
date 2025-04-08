@@ -4,7 +4,7 @@ layout: default
 
 # Perception Emulated Actor Critic in Crowd Scenario Navigation
 
-Our code is available at [here](https://github.com/IJCAI25/peac_code)
+Our code is available [here](https://github.com/IJCAI25/peac_code)
 
 # Training Details
 
