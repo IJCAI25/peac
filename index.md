@@ -18,11 +18,7 @@ It should be noted that since our collision detection is based on the physical w
 
 We set $n_{\text{env}} = 10^3$, $n_{\text{crowd}} = 10^4$, and $\alpha = 3 \times 10^{-4}$.
 
-We select features of obstacles, pedestrians, and roads as the observation objects for the Semantic Feature, that is, $N_s = N_{\text{agent}} + N_{\text{route}} + N_{\text{pedestrian}} + N_{\text{obstacle}}$, where the value of each component changes with the surrounding environment, because each bit of the $F_s$ vector contains a value corresponding to semantic information. The corresponding network structure is below：
-
-<div style="text-align: center;">
-  <img src="./figure/sophistry.png" width="80%">
-</div>
+We select features of obstacles, pedestrians, and roads as the observation objects for the Semantic Feature, that is, $N_s = N_{\text{agent}} + N_{\text{route}} + N_{\text{pedestrian}} + N_{\text{obstacle}}$, where the value of each component changes with the surrounding environment, because each bit of the $F_s$ vector contains a value corresponding to semantic information.
 
 We mentioned the references for the selected evaluation metrics in our paper, and our evaluation methods follow the frameworks used in these papers. Here, we provide a definition:
 
@@ -64,11 +60,11 @@ An example of the output is as follows:
 
 ***Actions:*** 
 
-*Velocity: ($v_x$: 0.11, $v_y$: 0.18, $v_z$:0.00)*
+*Velocity:* ($v_x$: 0.11, $v_y$: 0.18, $v_z$:0.00)
 
-*Angular Velocity: ($w_x$: -1.02, $w_y$: 0.00, $w_z$:0.00)*
+*Angular Velocity:* ($w_x$: -1.02, $w_y$: 0.00, $w_z$:0.00)
 
-*Rotation: ($\theta_x$: -0.28, $\theta_y$: -0.56, $\theta_z$:0.78)*
+*Rotation:* ($\theta_x$: -0.28, $\theta_y$: -0.56, $\theta_z$:0.78)
 
 ***Reason:***
 
@@ -84,7 +80,7 @@ An example of the output is as follows:
 # Transformer Network
 
 <div style="text-align: center;">
-  <img src="./figure/sophistry.png" width="80%">
+  <img src="./figure/transformer.png" width="80%">
 </div>
 Our Transformer network, built on components akin to Transformers, maps inputs into a latent space for processing by using the attention mechanism in a non-uniform manner, and then decodes them back to the output space. This approach circumvents the quadratic dependency on the size of the inputs or outputs, enabling more efficient scaling to larger inputs and outputs.
 
@@ -92,18 +88,18 @@ Our Transformer network, built on components akin to Transformers, maps inputs i
 
 <div style="display: flex; justify-content: center;">
   <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
-    <img src="./figure/sophistry.png" alt="Image 1" width="100">
-    <img src="./figure/sophistry.png" alt="Image 2" width="100">
-    <img src="./figure/sophistry.png" alt="Image 3" width="100">
-    <img src="./figure/sophistry.png" alt="Image 4" width="100">
-    <img src="./figure/sophistry.png" alt="Image 5" width="100">
-    <img src="./figure/sophistry.png" alt="Image 6" width="100">
-    <img src="./figure/sophistry.png" alt="Image 7" width="100">
-    <img src="./figure/sophistry.png" alt="Image 8" width="100">
-    <img src="./figure/sophistry.png" alt="Image 9" width="100">
-    <img src="./figure/sophistry.png" alt="Image 10" width="100">
-    <img src="./figure/sophistry.png" alt="Image 11" width="100">
-    <img src="./figure/sophistry.png" alt="Image 12" width="100">
+    <img src="./figure/llm-1.png" alt="Image 1" width="100">
+    <img src="./figure/llm-2.png" alt="Image 2" width="100">
+    <img src="./figure/llm-3.png" alt="Image 3" width="100">
+    <img src="./figure/llm-4.png" alt="Image 4" width="100">
+    <img src="./figure/llm-5.png" alt="Image 5" width="100">
+    <img src="./figure/llm-6.png" alt="Image 6" width="100">
+    <img src="./figure/llm-7.png" alt="Image 7" width="100">
+    <img src="./figure/llm-8.png" alt="Image 8" width="100">
+    <img src="./figure/llm-9.png" alt="Image 9" width="100">
+    <img src="./figure/llm-10.png" alt="Image 10" width="100">
+    <img src="./figure/llm-11.png" alt="Image 11" width="100">
+    <img src="./figure/llm-12.png" alt="Image 12" width="100">
   </div>
 </div>
 
