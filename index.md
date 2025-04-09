@@ -9,7 +9,7 @@ Our code is available [here](https://github.com/IJCAI25/peac_code)
 # Training Environment
 
 <div style="text-align: center;">
-  <img src="./figure/env.png" width="80%">
+  <img src="./figure/env.png" width="100%">
 </div>
 
 Above is the navigation environment. Our environment setup comply with the NHTSA typology’s scenario specifications, the paths in the environment incorporate classic road structures, including SI (Signalized Intersection), USI (Unsignalized Intersection), RAB (Roundabouts), LANE, and EOA (Emergency Obstacle Avoidance).
